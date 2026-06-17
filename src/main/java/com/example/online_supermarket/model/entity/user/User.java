@@ -1,5 +1,6 @@
 package com.example.online_supermarket.model.entity.user;
 
+import com.example.online_supermarket.model.entity.loyalty_card.LoyaltyCard;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -8,6 +9,8 @@ import lombok.*;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 @Builder
 @Entity
