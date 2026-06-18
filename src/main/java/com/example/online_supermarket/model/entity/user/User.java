@@ -56,13 +56,5 @@ public class User {
     private LocalDateTime createdOn;
     private LocalDateTime updatedOn;
 
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private LoyaltyCard loyaltyCard;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Order> orders;
-
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Basket basket;
 }
 
