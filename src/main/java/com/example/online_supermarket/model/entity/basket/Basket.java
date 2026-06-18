@@ -30,6 +30,6 @@ public class Basket {
     private User user;
 
     @OneToMany(mappedBy = "basket")
-    private List<BasketItem> itemsInBasket;
+    private List<BasketItem> basketItems;
 
 }
