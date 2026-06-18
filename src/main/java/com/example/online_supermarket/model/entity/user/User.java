@@ -1,12 +1,15 @@
 package com.example.online_supermarket.model.entity.user;
 
+import com.example.online_supermarket.model.entity.basket.Basket;
 import com.example.online_supermarket.model.entity.loyalty_card.LoyaltyCard;
+import com.example.online_supermarket.model.entity.order.Order;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @AllArgsConstructor
@@ -14,7 +17,7 @@ import java.util.UUID;
 @Data
 @Builder
 @Entity
-@Table
+@Table(name = "users")
 public class User {
 
     @Id

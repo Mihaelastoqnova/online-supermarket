@@ -1,40 +1,35 @@
-package com.example.online_supermarket.model.entity.loyalty_card;
+package com.example.online_supermarket.model.entity.basket;
 
 import com.example.online_supermarket.model.entity.user.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
 @Builder
 @Entity
-@Table(name = "loyalty_cards")
-public class LoyaltyCard {
+@Table(name = "baskets")
+public class Basket {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @Column(nullable = false, unique = true)
-    private String cardNumber;
-
-    @Column(nullable = false)
-    private int points;
-
-    private LocalDateTime issuedOn;
+    private LocalDateTime lastUpdatedOn;
 
     @OneToOne
     @JoinColumn(name = "user_id", nullable = false, unique = true)
     private User user;
 
-    public LoyaltyCard(){
-        this.points = 0;
-        this.issuedOn = LocalDateTime.now();
-    }
+    @OneToMany(mappedBy = "basket")
+    private List<BasketItem> itemsInBasket;
 
 }
