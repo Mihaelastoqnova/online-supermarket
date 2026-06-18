@@ -29,7 +29,4 @@ public class Basket {
     @JoinColumn(name = "user_id", nullable = false, unique = true)
     private User user;
 
-    @OneToMany(mappedBy = "basket")
-    private List<BasketItem> basketItems;
-
 }
