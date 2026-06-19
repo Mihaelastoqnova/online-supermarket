@@ -32,9 +32,5 @@ public class LoyaltyCard {
     @JoinColumn(name = "user_id", nullable = false, unique = true)
     private User user;
 
-    public LoyaltyCard(){
-        this.points = 0;
-        this.issuedOn = LocalDateTime.now();
-    }
 
 }
